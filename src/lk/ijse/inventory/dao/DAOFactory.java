@@ -4,8 +4,14 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.dao;
+
 import lk.ijse.inventory.dao.custom.impl.CustomerDAOImpl;
 import lk.ijse.inventory.dao.custom.impl.ItemDAOImpl;
+import lk.ijse.inventory.dao.custom.impl.OrderDAOImpl;
+import lk.ijse.inventory.dao.custom.impl.OrderDetailsDAOImpl;
+//import dao.custom.impl.OrderDAOImpl;
+//import dao.custom.impl.OrderDetailsDAOImpl;
+//import dao.custom.impl.QueryDAOImpl;
 
 /**
  *
@@ -37,6 +43,12 @@ public class DAOFactory {
                 return new CustomerDAOImpl();
             case ITEM:
                 return new ItemDAOImpl();
+            case ORDERS:
+                return new OrderDAOImpl();
+            case ORDERDETAILS:
+                return new OrderDetailsDAOImpl();
+//            case QUERYDAO:
+//                return new QueryDAOImpl();
             default:
                 return null;
         }

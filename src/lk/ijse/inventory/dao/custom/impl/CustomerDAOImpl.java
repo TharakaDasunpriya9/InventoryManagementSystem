@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.dao.custom.impl;
-
 import lk.ijse.inventory.dao.CrudUtil;
 import lk.ijse.inventory.dao.custom.CustomerDAO;
 import java.sql.ResultSet;

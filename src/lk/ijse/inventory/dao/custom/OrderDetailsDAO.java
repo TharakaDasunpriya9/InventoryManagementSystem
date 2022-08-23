@@ -4,13 +4,13 @@
  */
 package lk.ijse.inventory.dao.custom;
 import lk.ijse.inventory.dao.CRUDDAO;
-import lk.ijse.inventory.entity.Item;
+import lk.ijse.inventory.entity.OrderDetail;
+       
 
 /**
  *
  * @author Tharaka Dasunpriya
  */
-public interface ItemDAO extends CRUDDAO<Item,String>{
-    public String getItemLastID(String id)throws Exception;        
+public interface OrderDetailsDAO extends CRUDDAO<OrderDetail,String>{
     
 }

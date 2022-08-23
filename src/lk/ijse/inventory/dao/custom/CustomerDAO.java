@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.dao.custom;
-
 import lk.ijse.inventory.entity.Customer;
 import lk.ijse.inventory.dao.CRUDDAO;
 

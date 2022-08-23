@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package lk.ijse.inventory.dao.custom.impl;
-
 import lk.ijse.inventory.dao.CrudUtil;
 import lk.ijse.inventory.dao.custom.ItemDAO;
 import lk.ijse.inventory.entity.Item;

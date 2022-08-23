@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.dao;
+
 import lk.ijse.inventory.db.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
