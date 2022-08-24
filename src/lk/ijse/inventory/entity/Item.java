@@ -1,63 +1,58 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lk.ijse.inventory.entity;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class Item {
-    private String itemCode;
-    private String itemName;
-    private Integer qty;
-    private Double unitPrice;
+
+    private String code;
+    private String description;
+    private int qtyOnHand;
+    private double unitPrice;
 
     public Item() {
     }
 
-    public Item(String itemCode, String itemName, Integer qty, Double unitPrice) {
-        this.itemCode = itemCode;
-        this.itemName = itemName;
-        this.qty = qty;
+    public Item(String code, String description, int qtyOnHand, double unitPrice) {
+        this.code = code;
+        this.description = description;
+        this.qtyOnHand = qtyOnHand;
         this.unitPrice = unitPrice;
     }
 
-    public String getItemCode() {
-        return itemCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Integer getQty() {
-        return qty;
+    public int getQtyOnHand() {
+        return qtyOnHand;
     }
 
-    public void setQty(Integer qty) {
-        this.qty = qty;
+    public void setQtyOnHand(int qtyOnHand) {
+        this.qtyOnHand = qtyOnHand;
     }
 
-    public Double getUnitPrice() {
+    public double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(Double unitPrice) {
+    public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
-    
-    
-            
-           
-    
+
 }

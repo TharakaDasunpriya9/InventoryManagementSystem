@@ -8,14 +8,13 @@ package lk.ijse.inventory.dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
 public interface CRUDDAO<T,ID> extends SuperDAO{
     public boolean add(T enty) throws ClassNotFoundException, SQLException;
     public boolean delete(ID id) throws ClassNotFoundException, SQLException;
     public boolean update(T enty) throws SQLException, ClassNotFoundException ;
     public T search(ID id) throws SQLException, ClassNotFoundException;
     public ArrayList<T> getAll() throws SQLException, ClassNotFoundException;
+//     public T  getAllbyID(String id) throws SQLException, ClassNotFoundException;
+ public ArrayList<T>  getAllbyID(String id) throws SQLException, ClassNotFoundException;
+
 }

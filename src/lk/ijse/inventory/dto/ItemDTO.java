@@ -1,23 +1,21 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lk.ijse.inventory.dto;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class ItemDTO {
     private String itemCode;
     private String itemName;
-    private Integer qty;
+    private int qty;
     private double unitPrice;
 
     public ItemDTO() {
     }
 
-    public ItemDTO(String itemCode, String itemName, Integer qty, double unitPrice) {
+    public ItemDTO(String itemCode, String itemName, int qty, double unitPrice) {
         this.itemCode = itemCode;
         this.itemName = itemName;
         this.qty = qty;
@@ -40,11 +38,11 @@ public class ItemDTO {
         this.itemName = itemName;
     }
 
-    public Integer getQty() {
+    public int getQty() {
         return qty;
     }
 
-    public void setQty(Integer qty) {
+    public void setQty(int qty) {
         this.qty = qty;
     }
 
@@ -56,7 +54,5 @@ public class ItemDTO {
         this.unitPrice = unitPrice;
     }
     
-    
-            
     
 }

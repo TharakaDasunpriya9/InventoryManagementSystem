@@ -9,14 +9,9 @@ import lk.ijse.inventory.dao.custom.impl.CustomerDAOImpl;
 import lk.ijse.inventory.dao.custom.impl.ItemDAOImpl;
 import lk.ijse.inventory.dao.custom.impl.OrderDAOImpl;
 import lk.ijse.inventory.dao.custom.impl.OrderDetailsDAOImpl;
-//import dao.custom.impl.OrderDAOImpl;
-//import dao.custom.impl.OrderDetailsDAOImpl;
-//import dao.custom.impl.QueryDAOImpl;
+import lk.ijse.inventory.dao.custom.impl.QueryDAOImpl;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class DAOFactory {
 
     private static DAOFactory dAOFactory;
@@ -47,8 +42,8 @@ public class DAOFactory {
                 return new OrderDAOImpl();
             case ORDERDETAILS:
                 return new OrderDetailsDAOImpl();
-//            case QUERYDAO:
-//                return new QueryDAOImpl();
+            case QUERYDAO:
+                return new QueryDAOImpl();
             default:
                 return null;
         }

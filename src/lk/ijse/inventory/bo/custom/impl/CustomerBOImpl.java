@@ -13,10 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import lk.ijse.inventory.entity.Customer;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class CustomerBOImpl implements CustomerBO {
 
     CustomerDAO dao = (CustomerDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);

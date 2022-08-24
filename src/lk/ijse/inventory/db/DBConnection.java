@@ -9,10 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class DBConnection {
 
     private static DBConnection dbConnection;
@@ -20,7 +17,7 @@ public class DBConnection {
 
     private DBConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/markets2", "root", "1234");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/markets3", "root", "1234");
     }
 
     public static DBConnection getDBConnection() throws ClassNotFoundException, SQLException {

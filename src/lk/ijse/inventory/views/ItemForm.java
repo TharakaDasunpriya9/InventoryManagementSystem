@@ -1,9 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lk.ijse.inventory.views;
-
 
 import lk.ijse.inventory.controller.ItemFormController;
 import lk.ijse.inventory.dto.ItemDTO;
@@ -14,15 +14,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class ItemForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ItemForm
-     */
+   
     public ItemForm() {
         initComponents();
         loadAllItems();
@@ -39,285 +34,215 @@ public class ItemForm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         txtItemUnitPrice = new javax.swing.JTextField();
-        txtItemQty = new javax.swing.JTextField();
-        txtItemName = new javax.swing.JTextField();
         txtItemCode = new javax.swing.JTextField();
+        txtItemName = new javax.swing.JTextField();
+        txtItemQty = new javax.swing.JTextField();
+        btnClear = new javax.swing.JButton();
+        btnRegister = new javax.swing.JButton();
+        btnRenew = new javax.swing.JButton();
+        btnRemove = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblItem = new javax.swing.JTable();
-        btnItemClear = new javax.swing.JButton();
-        btnItemDelete = new javax.swing.JButton();
-        btnItemUpdate = new javax.swing.JButton();
-        btnItemSave = new javax.swing.JButton();
-        BackToDashboard = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("ITEM fORM");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 180, -1));
-
-        jLabel2.setText("itemQty");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
-
-        jLabel3.setText("itemUnitPrice");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
-
-        jLabel6.setText("itemName");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
-
-        jLabel7.setText("itemCode");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, -1, -1));
-
-        txtItemUnitPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtItemUnitPriceActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtItemUnitPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 290, -1));
-
-        txtItemQty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtItemQtyActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtItemQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 250, -1));
-
-        txtItemName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtItemNameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtItemName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 250, -1));
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel1.setText("Item Manage");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jPanel1.add(txtItemUnitPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 290, 50));
 
         txtItemCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtItemCodeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtItemCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 250, -1));
+        jPanel1.add(txtItemCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 290, 50));
+        jPanel1.add(txtItemName, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 290, 50));
+
+        txtItemQty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtItemQtyActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtItemQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 290, 50));
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 90, 40));
+
+        btnRegister.setText("Save");
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 90, 40));
+
+        btnRenew.setText("Update");
+        btnRenew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRenewActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRenew, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 90, 40));
+
+        btnRemove.setText("Remove");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 90, 40));
 
         tblItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ItemCode", "itemName", "itemQty", "itemUnitPrice"
+                "Code", "Name", "Qty", "Price"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(tblItem);
+        if (tblItem.getColumnModel().getColumnCount() > 0) {
+            tblItem.getColumnModel().getColumn(3).setResizable(false);
+        }
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 680, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 410, 230));
 
-        btnItemClear.setText("Clear");
-        btnItemClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItemClearActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnItemClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, -1, -1));
+        jLabel2.setText("Item Unit Price");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
 
-        btnItemDelete.setText("Delete");
-        btnItemDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItemDeleteActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnItemDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, -1, -1));
+        jLabel3.setText("Item Code");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
 
-        btnItemUpdate.setText("Update");
-        btnItemUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItemUpdateActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnItemUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+        jLabel4.setText("Item Name");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
-        btnItemSave.setText("Save");
-        btnItemSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItemSaveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnItemSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
-
-        BackToDashboard.setText("backToDashoboard");
-        BackToDashboard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackToDashboardActionPerformed(evt);
-            }
-        });
-        jPanel1.add(BackToDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 180, -1));
+        jLabel5.setText("Item Qty");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 153));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 670));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 590));
-
-        jPanel3.setBackground(new java.awt.Color(204, 255, 153));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 740, 50));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 853, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 590));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtItemUnitPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemUnitPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtItemUnitPriceActionPerformed
 
     private void txtItemQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemQtyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtItemQtyActionPerformed
 
-    private void txtItemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtItemNameActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+        //gather details
+        String itemCode = txtItemCode.getText();
+        String itemName = txtItemName.getText();
+        int itemQty = Integer.parseInt(txtItemQty.getText());
+        double unitPrice = Double.parseDouble(txtItemUnitPrice.getText());
+
+        try {
+
+            ItemDTO item = new ItemDTO(itemCode, itemName, itemQty, unitPrice);
+            boolean addItem = new ItemFormController().addItem(item);
+
+            if (addItem) {
+                JOptionPane.showMessageDialog(this, "Item Saved..!");
+                loadAllItems();
+            } else {
+                JOptionPane.showMessageDialog(this, "Item Not Saved..!");
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnRenewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenewActionPerformed
+        //gather details
+        String itemCode = txtItemCode.getText();
+        String itemName = txtItemName.getText();
+        int itemQty = Integer.parseInt(txtItemQty.getText());
+        double unitPrice = Double.parseDouble(txtItemUnitPrice.getText());
+
+        try {
+            ItemDTO item = new ItemDTO(itemCode, itemName, itemQty, unitPrice);
+            boolean result = new ItemFormController().updateItem(item);
+            if (result) {
+                JOptionPane.showMessageDialog(this, "Item Updated..!");
+                loadAllItems();
+            } else {
+                JOptionPane.showMessageDialog(this, "Item Not Updated..!");
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnRenewActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        //gather details
+        String itemCode = txtItemCode.getText();
+
+        try {
+            boolean result = new ItemFormController().removeItem(itemCode);
+            if (result) {
+                JOptionPane.showMessageDialog(this, "Item Removed..!");
+                loadAllItems();
+            } else {
+                JOptionPane.showMessageDialog(this, "Item Not Removed..!");
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void txtItemCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemCodeActionPerformed
-       
-            String itemCode= txtItemCode.getText();
-            try { 
-            ItemDTO searchItem= new ItemFormController().searchItem(itemCode);
-            if(searchItem!=null){
+        //gather details
+        String itemCode = txtItemCode.getText();
+
+        try {
+            ItemDTO searchItem = new ItemFormController().searchItem(itemCode);
+            if (searchItem != null) {
                 txtItemCode.setText(searchItem.getItemCode());
                 txtItemName.setText(searchItem.getItemName());
-                txtItemQty.setText(searchItem.getQty()+"");
-                txtItemUnitPrice.setText(searchItem.getUnitPrice()+"");
-                
-                
+                txtItemQty.setText(searchItem.getQty()+ "");
+                txtItemUnitPrice.setText(searchItem.getUnitPrice() + "");
             } else {
                 clearAllText();
             }
-        } catch (ClassNotFoundException | SQLException ex) {
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtItemCodeActionPerformed
 
-    private void btnItemUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemUpdateActionPerformed
-        try {
-            String itemCode = txtItemCode.getText();
-            String itemName = txtItemName.getText();
-            Integer itemqty = Integer.parseInt(txtItemQty.getText());
-            Double itemUnitPrice = Double.parseDouble(txtItemUnitPrice.getText());
-            
-            ItemDTO updateItem= new ItemDTO(itemCode, itemName, itemqty, itemUnitPrice);
-            boolean result = new ItemFormController().updateItem(updateItem);
-            
-            if(result){
-                JOptionPane.showMessageDialog(this,"Item Updated");
-                loadAllItems();
-            }else{
-                JOptionPane.showMessageDialog(this,"Item Not Updated");
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      
-    }//GEN-LAST:event_btnItemUpdateActionPerformed
-
-    private void btnItemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemSaveActionPerformed
-       
-            String itemCode = txtItemCode.getText();
-            String itemName = txtItemName.getText();
-            Integer itemqty = Integer.parseInt(txtItemQty.getText());
-            Double itemUnitPrice = Double.parseDouble(txtItemUnitPrice.getText());
-            
-             try {
-            ItemDTO newitem = new ItemDTO(itemCode, itemName, itemqty,itemUnitPrice);
-            boolean additem = new ItemFormController().addItem(newitem);
-            
-            if (additem) {
-                JOptionPane.showMessageDialog(this,"Item Registerd");
-                loadAllItems();
-            }else{
-                JOptionPane.showMessageDialog(this,"Item Not Registerd");
-            }
-         
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-       
-    }//GEN-LAST:event_btnItemSaveActionPerformed
-
-    private void btnItemDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemDeleteActionPerformed
-        
-            String itemCode = txtItemCode.getText();
-            try {
-            boolean result = new ItemFormController().removeItem(itemCode);
-            
-            if(result){
-                JOptionPane.showMessageDialog(this,"Item Removed");
-                loadAllItems();
-            }else{
-                JOptionPane.showMessageDialog(this,"Item not Removed");
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_btnItemDeleteActionPerformed
-
-    private void btnItemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemClearActionPerformed
-      clearAllText();
-    }//GEN-LAST:event_btnItemClearActionPerformed
-
-    private void BackToDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToDashboardActionPerformed
-       new DashboardForm().setVisible(true);
-       this.dispose();
-       
-    }//GEN-LAST:event_BackToDashboardActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        clearAllText();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,6 +271,8 @@ public class ItemForm extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -356,19 +283,17 @@ public class ItemForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackToDashboard;
-    private javax.swing.JButton btnItemClear;
-    private javax.swing.JButton btnItemDelete;
-    private javax.swing.JButton btnItemSave;
-    private javax.swing.JButton btnItemUpdate;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnRegister;
+    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnRenew;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblItem;
     private javax.swing.JTextField txtItemCode;
@@ -377,22 +302,6 @@ public class ItemForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtItemUnitPrice;
     // End of variables declaration//GEN-END:variables
 
-    private void loadAllItems(){
-       
-       
-            DefaultTableModel dtm = (DefaultTableModel) tblItem.getModel();
-            dtm.setRowCount(0);
-             try {
-            ArrayList<ItemDTO> allitem = new ItemFormController().getAllItem();
-            for (ItemDTO i : allitem) {
-                Object[] row ={i.getItemCode(),i.getItemName(),i.getQty(),i.getUnitPrice()};
-                dtm.addRow(row);
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     private void clearAllText() {
         txtItemCode.setText("");
         txtItemName.setText("");
@@ -400,5 +309,24 @@ public class ItemForm extends javax.swing.JFrame {
         txtItemUnitPrice.setText("");
         txtItemCode.requestFocus();
         loadAllItems();
+    }
+
+    private void loadAllItems() {
+
+        DefaultTableModel dtm = (DefaultTableModel) tblItem.getModel();
+        dtm.setRowCount(0);
+
+        try {
+            ArrayList<ItemDTO> allItems = new ItemFormController().getAllItems();
+            for (ItemDTO i : allItems) {
+                Object[] row = {i.getItemCode(), i.getItemName(), i.getQty(), i.getUnitPrice()};
+                dtm.addRow(row);
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -1,30 +1,27 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lk.ijse.inventory.dto;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class OrderDTO {
+
     private String oid;
     private String date;
-    private String CustomerID;
+    private String customerID;
     private ArrayList<OrderDetailDTO> orderDetails = new ArrayList<>();
 
     public OrderDTO() {
     }
-    
-    
 
-    public OrderDTO(String oid, String date, String CustomerID) {
+    public OrderDTO(String oid, String date, String customerID) {
         this.oid = oid;
         this.date = date;
-        this.CustomerID = CustomerID;
+        this.customerID = customerID;
     }
 
     public String getOid() {
@@ -44,11 +41,11 @@ public class OrderDTO {
     }
 
     public String getCustomerID() {
-        return CustomerID;
+        return customerID;
     }
 
-    public void setCustomerID(String CustomerID) {
-        this.CustomerID = CustomerID;
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
     public ArrayList<OrderDetailDTO> getOrderDetails() {
@@ -60,6 +57,5 @@ public class OrderDTO {
     }
     
     
-    
-    
+
 }

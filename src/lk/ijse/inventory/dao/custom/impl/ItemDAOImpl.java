@@ -1,79 +1,76 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lk.ijse.inventory.dao.custom.impl;
-import lk.ijse.inventory.dao.CrudUtil;
-import lk.ijse.inventory.dao.custom.ItemDAO;
-import lk.ijse.inventory.entity.Item;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import lk.ijse.inventory.dao.CrudUtil;
+import lk.ijse.inventory.dao.custom.ItemDAO;
+import lk.ijse.inventory.entity.Item;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
-//Sql query table name use karanna ona SQL DB eke
 
-public class ItemDAOImpl implements ItemDAO{
+public class ItemDAOImpl implements ItemDAO {
 
     @Override
-    public String getItemLastID(String id) throws Exception{
-        return null;
-    }
-
-    @Override
-    public boolean add(Item enty) throws ClassNotFoundException, SQLException {
-        return CrudUtil.executeUpdate("insert into item values(?,?,?,?)",enty.getItemCode(),enty.getItemName(),enty.getQty(),enty.getUnitPrice());
+    public boolean add(Item e) throws ClassNotFoundException, SQLException {
+        String sql = "insert into Item values(?,?,?,?)";
+        return CrudUtil.executeUpdate(sql, e.getCode(), e.getDescription(), e.getQtyOnHand(), e.getUnitPrice());
     }
 
     @Override
     public boolean delete(String id) throws ClassNotFoundException, SQLException {
-       String sql = "Delete from item where itemCode =?";
-       return CrudUtil.executeUpdate(sql,id);
+        String sql = "delete from Item where code=?";
+        return CrudUtil.executeUpdate(sql, id);
     }
 
     @Override
-    public boolean update(Item enty) throws SQLException, ClassNotFoundException {
-    String sql = "Update item set itemName=?,itemQty=?,unitPrice=? where itemCode=?";
-    return CrudUtil.executeUpdate(sql,enty.getItemName(),enty.getQty(),enty.getUnitPrice(),enty.getItemCode());
+    public boolean update(Item e) throws SQLException, ClassNotFoundException {
+        String sql = "Update Item set description=?,qtyOnHand=?,unitPrice=? where code=?";
+        return CrudUtil.executeUpdate(sql, e.getDescription(), e.getQtyOnHand(), e.getUnitPrice(), e.getCode());
     }
 
     @Override
     public Item search(String id) throws SQLException, ClassNotFoundException {
-       String sql = "Select * from item where code=?";
-        ResultSet rst= CrudUtil.executeQuery(sql,id);
+        String sql = "select * from Item where code=?";
+        ResultSet rst = CrudUtil.executeQuery(sql, id);
         if (rst.next()) {
-        String itemCode=rst.getString(1);
-        String itemName = rst.getString(2);
-        Integer itemQty =rst.getInt(3);
-        Double itemUnitPrice= rst.getDouble(4);
-        
-        return new Item(itemCode,itemName,itemQty,itemUnitPrice);
-                 
-        }else{
-            return null;
-        }      
+            String code = rst.getString(1);
+            String itemName = rst.getString(2);
+            int qtyOnHand = rst.getInt(3);
+            double unitPrice = rst.getDouble(4);
+            return new Item(code, itemName, qtyOnHand, unitPrice);
+        }
+        return null;
     }
 
     @Override
     public ArrayList<Item> getAll() throws SQLException, ClassNotFoundException {
-        String sql= "Select * from Item";
+        String sql = "select * from Item";
         ResultSet rst = CrudUtil.executeQuery(sql);
-        ArrayList<Item> allItem = new ArrayList<>();
-        
-        while (rst.next()) {            
-        String itemCode=rst.getString(1);
-        String itemName = rst.getString(2);
-        Integer itemQty =rst.getInt(3);
-        Double itemUnitPrice= rst.getDouble(4);
-        
-       Item item =new Item(itemCode,itemName,itemQty,itemUnitPrice);
-       allItem.add(item);
-                 
-        }return allItem;
-                
-        
+        ArrayList<Item> allItmes = new ArrayList<>();
+        while (rst.next()) {
+            String code = rst.getString(1);
+            String itemName = rst.getString(2);
+            int qtyOnHand = rst.getInt(3);
+            double unitPrice = rst.getDouble(4);
+            Item item = new Item(code, itemName, qtyOnHand, unitPrice);
+            allItmes.add(item);
+
+        }
+        return allItmes;
     }
+
+    @Override
+    public String getItemLastID() throws Exception {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Item> getAllbyID(String id) throws SQLException, ClassNotFoundException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

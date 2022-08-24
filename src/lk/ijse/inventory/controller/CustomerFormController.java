@@ -4,16 +4,16 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.controller;
-import lk.ijse.inventory.bo.BOFactory;
-import lk.ijse.inventory.bo.custom.CustomerBO;
-import lk.ijse.inventory.dto.CustomerDTO;
+
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+import lk.ijse.inventory.bo.BOFactory;
+import lk.ijse.inventory.bo.custom.CustomerBO;
+import lk.ijse.inventory.dto.CustomerDTO;
+
+
 public class CustomerFormController {
 
     CustomerBO bo = (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.CUSTOMER);

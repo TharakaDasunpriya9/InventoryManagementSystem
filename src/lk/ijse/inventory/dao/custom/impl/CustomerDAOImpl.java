@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.dao.custom.impl;
+
 import lk.ijse.inventory.dao.CrudUtil;
 import lk.ijse.inventory.dao.custom.CustomerDAO;
 import java.sql.ResultSet;
@@ -11,10 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import lk.ijse.inventory.entity.Customer;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
@@ -71,5 +69,10 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public String getCustomerLastID(String id) throws Exception {
         return null;
+    }
+
+    @Override
+    public ArrayList<Customer> getAllbyID(String id) throws SQLException, ClassNotFoundException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

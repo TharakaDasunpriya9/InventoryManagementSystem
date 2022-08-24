@@ -5,10 +5,7 @@
  */
 package lk.ijse.inventory.dto;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class CustomerDTO {
     private String customerID;
     private String customerName;

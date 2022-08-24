@@ -5,10 +5,6 @@
  */
 package lk.ijse.inventory.dao;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
 public interface SuperDAO {
     
 }

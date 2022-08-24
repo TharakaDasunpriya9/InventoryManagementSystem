@@ -5,10 +5,6 @@
  */
 package lk.ijse.inventory.bo;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
 public interface SuperBO {
     
 }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.views;
+
 import lk.ijse.inventory.controller.CustomerFormController;
 import lk.ijse.inventory.dto.CustomerDTO;
 import java.sql.SQLException;
@@ -12,17 +13,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-//import entity.Customer;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class CustomerForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CustomerForm
-     */
+    
     public CustomerForm() {
         initComponents();
         loadAllCustomers();
@@ -53,9 +48,7 @@ public class CustomerForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        backToDashboard = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,23 +58,23 @@ public class CustomerForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jLabel1.setText("Customer Manage");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
-        jPanel1.add(txtCusSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 290, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        jPanel1.add(txtCusSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 290, 50));
 
         txtCusID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCusIDActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 290, 50));
-        jPanel1.add(txtCusName, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 290, 50));
+        jPanel1.add(txtCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 290, 50));
+        jPanel1.add(txtCusName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 290, 50));
 
         txtCusAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCusAddressActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCusAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 290, 50));
+        jPanel1.add(txtCusAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 290, 50));
 
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +82,7 @@ public class CustomerForm extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 340, 90, 40));
+        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 90, 40));
 
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -97,15 +90,15 @@ public class CustomerForm extends javax.swing.JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 130, 40));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 90, 40));
 
-        btnRenew.setText("Update");
+        btnRenew.setText("Renew");
         btnRenew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRenewActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRenew, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 140, 40));
+        jPanel1.add(btnRenew, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 90, 40));
 
         btnRemove.setText("Remove");
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
@@ -113,14 +106,14 @@ public class CustomerForm extends javax.swing.JFrame {
                 btnRemoveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 120, 40));
+        jPanel1.add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 90, 40));
 
         tblCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Cus ID", "Cus Name", "Cus Address", "Cus City"
+                "Cus ID", "Cus Name", "Cus Address", "Cus Salary"
             }
         ));
         jScrollPane1.setViewportView(tblCustomer);
@@ -128,35 +121,24 @@ public class CustomerForm extends javax.swing.JFrame {
             tblCustomer.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 630, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 410, 230));
 
-        jLabel2.setText("Customer City");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, -1, -1));
+        jLabel2.setText("Customer Salary");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
         jLabel3.setText("Customer ID");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
 
         jLabel4.setText("Customer Name");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         jLabel5.setText("Customer Address");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
-
-        backToDashboard.setText("back to Dashboard");
-        backToDashboard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backToDashboardActionPerformed(evt);
-            }
-        });
-        jPanel1.add(backToDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 153));
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 650));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 650));
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 153));
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 710, 20));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 660));
 
         pack();
         setLocationRelativeTo(null);
@@ -186,7 +168,9 @@ public class CustomerForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Customer Not Registerd..!");
             }
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
@@ -208,7 +192,9 @@ public class CustomerForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Customer Not Updated..!");
             }
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRenewActionPerformed
@@ -226,7 +212,9 @@ public class CustomerForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Customer Not Removed..!");
             }
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRemoveActionPerformed
@@ -238,7 +226,7 @@ public class CustomerForm extends javax.swing.JFrame {
         try {
             CustomerDTO searchCustomer = new CustomerFormController().searchCustomer(customerID);
             if (searchCustomer != null) {
-                txtCusID.setText(searchCustomer.getCustomerID());
+                txtCusID.setText(searchCustomer.getCustomerAddress());
                 txtCusName.setText(searchCustomer.getCustomerName());
                 txtCusAddress.setText(searchCustomer.getCustomerAddress());
                 txtCusSalary.setText(searchCustomer.getCustomerSalary() + "");
@@ -246,7 +234,9 @@ public class CustomerForm extends javax.swing.JFrame {
                 clearAllText();
             }
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txtCusIDActionPerformed
@@ -254,11 +244,6 @@ public class CustomerForm extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         clearAllText();
     }//GEN-LAST:event_btnClearActionPerformed
-
-    private void backToDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToDashboardActionPerformed
-      new DashboardForm().setVisible(true);
-      this.dispose();
-    }//GEN-LAST:event_backToDashboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,13 +274,14 @@ public class CustomerForm extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new CustomerForm().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CustomerForm().setVisible(true);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backToDashboard;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnRemove;
@@ -307,7 +293,6 @@ public class CustomerForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCustomer;
     private javax.swing.JTextField txtCusAddress;
@@ -338,7 +323,9 @@ public class CustomerForm extends javax.swing.JFrame {
                 dtm.addRow(row);
             }
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
             Logger.getLogger(CustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

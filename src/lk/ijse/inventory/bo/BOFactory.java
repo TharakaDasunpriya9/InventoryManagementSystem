@@ -7,10 +7,9 @@ package lk.ijse.inventory.bo;
 
 import lk.ijse.inventory.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.inventory.bo.custom.impl.ItemBOImpl;
-/**
- *
- * @author Tharaka Dasunpriya
- */
+import lk.ijse.inventory.bo.custom.impl.PurchaseOrderBOImpl;
+
+
 public class BOFactory {
 
     private static BOFactory boFactory;
@@ -33,6 +32,10 @@ public class BOFactory {
         switch (types) {
             case CUSTOMER:
                 return new CustomerBOImpl();
+            case ITEM:
+                return new ItemBOImpl();
+            case PURCHASEORDER:
+                return new PurchaseOrderBOImpl();
             default:
                 return null;
 

@@ -5,10 +5,7 @@
  */
 package lk.ijse.inventory.entity;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class Customer {
     private String id;
     private String name;

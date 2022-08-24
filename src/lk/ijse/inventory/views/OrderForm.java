@@ -1,28 +1,30 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package lk.ijse.inventory.views;
+
 import lk.ijse.inventory.controller.ItemFormController;
 import lk.ijse.inventory.controller.OrderFormController;
 import lk.ijse.inventory.dto.CustomerDTO;
 import lk.ijse.inventory.dto.ItemDTO;
+import lk.ijse.inventory.dto.OrderDTO;
+import lk.ijse.inventory.dto.OrderDetailDTO;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
+
 public class OrderForm extends javax.swing.JFrame {
-         DefaultTableModel dtm;
-    /**
-     * Creates new form orderForm
-     */
+
+    DefaultTableModel dtm;
+
+    
     public OrderForm() {
         initComponents();
         setDate();
@@ -40,78 +42,116 @@ public class OrderForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel8 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        txtODate = new javax.swing.JTextField();
+        txtOID = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        txtcusAddress = new javax.swing.JTextField();
-        txtOrderDate = new javax.swing.JTextField();
-        txtCusName = new javax.swing.JTextField();
-        txtCusID = new javax.swing.JTextField();
-        txtItemName = new javax.swing.JTextField();
-        txtCusSalary = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        cmbCusID = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        txtItemUnitPrice = new javax.swing.JTextField();
-        txtItemQty = new javax.swing.JTextField();
-        txtBuyQty = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        cmbItem = new javax.swing.JComboBox<>();
+        txtItemSearch = new javax.swing.JTextField();
+        txtItemQtyOnHand = new javax.swing.JTextField();
+        txtUnitPrice = new javax.swing.JTextField();
         txtItemCode = new javax.swing.JTextField();
-        cmbSearchItem = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
+        txtItemName = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        btnAddRow = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        cmbCusID = new javax.swing.JComboBox<>();
+        txtCusSalary = new javax.swing.JTextField();
+        txtCusID = new javax.swing.JTextField();
+        txtCusName = new javax.swing.JTextField();
+        txtCusAddress = new javax.swing.JTextField();
+        txtSearcCusID = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        txtBuyQty = new javax.swing.JTextField();
+        btnAddTable = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblOrders = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
+        btnPurhchaseOrder = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Make the Customer Order");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 330, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 170, -1));
-        jPanel1.add(txtcusAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 150, -1));
-        jPanel1.add(txtOrderDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 150, -1));
-        jPanel1.add(txtCusName, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 180, -1));
-        jPanel1.add(txtCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 150, -1));
-        jPanel1.add(txtItemName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 170, -1));
-        jPanel1.add(txtCusSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 170, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 120, -1));
+        jPanel2.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(txtODate, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 120, 40));
 
-        jLabel2.setText("order Id");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 80, -1));
+        txtOID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOIDActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtOID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 130, 40));
 
-        jLabel3.setText("order Id");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 80, -1));
+        jLabel1.setText("Order Date");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
-        jLabel4.setText("Search Item");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 80, -1));
+        jLabel4.setText("Order ID");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel5.setText("Select Customer");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 110, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 350, 80));
 
-        jLabel6.setText("CID");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 80, -1));
+        jPanel3.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setText("Csalary");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 80, -1));
+        cmbItem.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbItemItemStateChanged(evt);
+            }
+        });
+        jPanel3.add(cmbItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 120, 40));
+        jPanel3.add(txtItemSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 130, 40));
+        jPanel3.add(txtItemQtyOnHand, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 120, 40));
+        jPanel3.add(txtUnitPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 130, 40));
+        jPanel3.add(txtItemCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, 40));
+        jPanel3.add(txtItemName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 130, 40));
 
-        jLabel8.setText("CAddress");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 80, -1));
+        jLabel11.setText("Select Item");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel12.setText("Search from Code");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
+
+        jLabel13.setText("Item Code");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jLabel14.setText("Item Name");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        jLabel15.setText("Item Qty on Hand");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel16.setText("Item Unit Price");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 340, 230));
+
+        jPanel4.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmbCusID.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -123,119 +163,167 @@ public class OrderForm extends javax.swing.JFrame {
                 cmbCusIDActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 140, -1));
+        jPanel4.add(cmbCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, 40));
+        jPanel4.add(txtCusSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 130, 40));
+        jPanel4.add(txtCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 130, 40));
 
-        jLabel9.setText("CName");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 80, -1));
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 160, -1));
-        jPanel1.add(txtItemUnitPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 200, -1));
-        jPanel1.add(txtItemQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 150, -1));
-
-        txtBuyQty.addActionListener(new java.awt.event.ActionListener() {
+        txtCusName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuyQtyActionPerformed(evt);
+                txtCusNameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBuyQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, 170, -1));
-        jPanel1.add(txtItemCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 150, -1));
+        jPanel4.add(txtCusName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 130, 40));
+        jPanel4.add(txtCusAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, 40));
 
-        cmbSearchItem.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbSearchItemItemStateChanged(evt);
-            }
-        });
-        cmbSearchItem.addActionListener(new java.awt.event.ActionListener() {
+        txtSearcCusID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbSearchItemActionPerformed(evt);
+                txtSearcCusIDActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbSearchItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 160, -1));
+        jPanel4.add(txtSearcCusID, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 40));
 
-        jLabel10.setText("order Date");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 80, -1));
+        jLabel2.setText("Search from ID");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, -1));
 
-        jLabel11.setText("ItemCode");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 80, -1));
+        jLabel6.setText("Select Customer");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel12.setText("itemQTyOnHand");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 120, -1));
+        jLabel7.setText("Customer ID");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        jLabel13.setText("order Date");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 80, -1));
+        jLabel8.setText("Customer Name");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, 20));
 
-        jLabel14.setText("itemUnitprice");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 110, -1));
+        jLabel9.setText("Customer Address");
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        jLabel16.setText("BuyQty");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 290, 80, -1));
+        jLabel10.setText("Customer Salary");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, -1));
 
-        jLabel17.setText("ItemName");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 80, -1));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 350, 230));
 
-        btnAddRow.setText("Add Row");
-        btnAddRow.addActionListener(new java.awt.event.ActionListener() {
+        jPanel5.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(83, 74, 74));
+        jLabel3.setText("Purchase Order Manage");
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 720, 40));
+
+        jPanel7.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel7.add(txtBuyQty, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 140, 40));
+
+        btnAddTable.setBackground(new java.awt.Color(218, 35, 50));
+        btnAddTable.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        btnAddTable.setForeground(new java.awt.Color(254, 254, 254));
+        btnAddTable.setText("Add Row");
+        btnAddTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddRowActionPerformed(evt);
+                btnAddTableActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddRow, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, -1, -1));
+        jPanel7.add(btnAddTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 100, 40));
+
+        jLabel5.setText("Buy Qty");
+        jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 340, 80));
+
+        jPanel8.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 740, 400));
+
+        jPanel6.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "itemCode ", "itemName", "Qty", "UnitPrice", "itemTotal"
+                "ItemCode", "Item Name", "Qty", "Unit Price", "Total"
             }
         ));
         jScrollPane1.setViewportView(tblOrders);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 740, 190));
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 700, 170));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 153));
+        btnPurhchaseOrder.setBackground(new java.awt.Color(52, 103, 211));
+        btnPurhchaseOrder.setFont(new java.awt.Font("Ubuntu", 1, 13)); // NOI18N
+        btnPurhchaseOrder.setForeground(new java.awt.Color(254, 254, 254));
+        btnPurhchaseOrder.setText("Purchase");
+        btnPurhchaseOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPurhchaseOrderActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnPurhchaseOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 110, 40));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
+        jPanel8.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 720, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 580));
+        jPanel9.setBackground(new java.awt.Color(204, 255, 153));
+        jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 680));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 690));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbCusIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCusIDActionPerformed
+    private void txtCusNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCusNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbCusIDActionPerformed
+    }//GEN-LAST:event_txtCusNameActionPerformed
+
+    private void txtSearcCusIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearcCusIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearcCusIDActionPerformed
+
+    private void btnPurhchaseOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurhchaseOrderActionPerformed
+
+        try {
+            //        details for orders table
+            String orderID = txtOID.getText();
+            String orderDate = txtODate.getText();
+            String customerID = cmbCusID.getSelectedItem().toString();
+
+            OrderDTO order = new OrderDTO(orderID, orderDate, customerID);
+
+////        details for OrderDetails
+//            ArrayList<OrderDetailDTO> allOrderDetails = new ArrayList<>();
+            for (int i = 0; i < dtm.getRowCount(); i++) {
+
+                String itemCode = dtm.getValueAt(i, 0).toString();
+                int qty = Integer.parseInt(dtm.getValueAt(i, 2).toString());
+                double unitPrice = Double.parseDouble(dtm.getValueAt(i, 3).toString());
+
+                OrderDetailDTO orderDetail = new OrderDetailDTO(orderID, itemCode, qty, unitPrice);
+                order.getOrderDetails().add(orderDetail);
+            }
+
+           
+            boolean purchaseOrder = new OrderFormController().purchaseOrder(order);
+            if (purchaseOrder) {
+                JOptionPane.showMessageDialog(this, "Order Placed");
+            } else {
+                JOptionPane.showMessageDialog(this, "Eroor");
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnPurhchaseOrderActionPerformed
 
     private void cmbCusIDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCusIDItemStateChanged
-         try {
+        try {
             String selectedCustomerID = cmbCusID.getSelectedItem().toString();
             CustomerDTO searchCustomer = new OrderFormController().searchCustomer(selectedCustomerID);
             if (searchCustomer != null) {
                 txtCusID.setText(searchCustomer.getCustomerID());
                 txtCusName.setText(searchCustomer.getCustomerName());
-                txtcusAddress.setText(searchCustomer.getCustomerAddress());
+                txtCusAddress.setText(searchCustomer.getCustomerAddress());
                 txtCusSalary.setText(searchCustomer.getCustomerSalary()+ "");
             }
 
@@ -246,45 +334,45 @@ public class OrderForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmbCusIDItemStateChanged
 
-    private void cmbSearchItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSearchItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbSearchItemActionPerformed
+    private void cmbItemItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbItemItemStateChanged
+        String selectedItem = cmbItem.getSelectedItem().toString();
+        try {
+            ItemDTO searchItem = new OrderFormController().searchItem(selectedItem);
+            if (searchItem != null) {
+                txtItemCode.setText(searchItem.getItemCode());
+                txtItemName.setText(searchItem.getItemName());
+                txtItemQtyOnHand.setText(searchItem.getQty() + "");
+                txtUnitPrice.setText(searchItem.getUnitPrice() + "");
+            }
 
-    private void cmbSearchItemItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbSearchItemItemStateChanged
-         String selectedItem = cmbSearchItem.getSelectedItem().toString();
-             try {
-                 ItemDTO searchitem = new ItemFormController().searchItem(selectedItem);
-                 if (searchitem != null) {
-                     txtItemCode.setText(searchitem.getItemCode());
-                     txtItemName.setText(searchitem.getItemName());
-                     txtItemQty.setText(searchitem.getQty()+"");
-                     txtItemUnitPrice.setText(searchitem.getUnitPrice()+"");
-           
-                 }
- 
-             } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (SQLException ex) {
-                 Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
-             }
-        
-    }//GEN-LAST:event_cmbSearchItemItemStateChanged
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cmbItemItemStateChanged
 
-    private void txtBuyQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuyQtyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuyQtyActionPerformed
+    private void btnAddTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTableActionPerformed
 
-    private void btnAddRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRowActionPerformed
-        String itemCode= cmbSearchItem.getSelectedItem().toString();
-        String itemName= txtItemName.getText();
+//        gather details for the table
+        String itemCode = cmbItem.getSelectedItem().toString();
+        String itemName = txtItemName.getText();
         int buyQty = Integer.parseInt(txtBuyQty.getText());
-        double unitPrice = Double.parseDouble(txtItemUnitPrice.getText());
-        double total  = unitPrice*buyQty;
-        
-        Object[] row = {itemCode,itemName,buyQty,unitPrice,total};
-                dtm.addRow(row);
-        
-    }//GEN-LAST:event_btnAddRowActionPerformed
+        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        double total = unitPrice * buyQty;
+
+        Object[] row = {itemCode, itemName, buyQty, unitPrice, total};
+        dtm.addRow(row);
+
+    }//GEN-LAST:event_btnAddTableActionPerformed
+
+    private void txtOIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOIDActionPerformed
+
+    private void cmbCusIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCusIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCusIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,8 +401,6 @@ public class OrderForm extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -325,17 +411,18 @@ public class OrderForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddRow;
+    private javax.swing.JButton btnAddTable;
+    private javax.swing.JButton btnPurhchaseOrder;
     private javax.swing.JComboBox<String> cmbCusID;
-    private javax.swing.JComboBox<String> cmbSearchItem;
+    private javax.swing.JComboBox<String> cmbItem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -346,30 +433,37 @@ public class OrderForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTable tblOrders;
     private javax.swing.JTextField txtBuyQty;
+    private javax.swing.JTextField txtCusAddress;
     private javax.swing.JTextField txtCusID;
     private javax.swing.JTextField txtCusName;
     private javax.swing.JTextField txtCusSalary;
     private javax.swing.JTextField txtItemCode;
     private javax.swing.JTextField txtItemName;
-    private javax.swing.JTextField txtItemQty;
-    private javax.swing.JTextField txtItemUnitPrice;
-    private javax.swing.JTextField txtOrderDate;
-    private javax.swing.JTextField txtcusAddress;
+    private javax.swing.JTextField txtItemQtyOnHand;
+    private javax.swing.JTextField txtItemSearch;
+    private javax.swing.JTextField txtODate;
+    private javax.swing.JTextField txtOID;
+    private javax.swing.JTextField txtSearcCusID;
+    private javax.swing.JTextField txtUnitPrice;
     // End of variables declaration//GEN-END:variables
 
     private void setDate() {
-     String Date= LocalDate.now().toString();
-     txtOrderDate.setText(Date);
+        String date = LocalDate.now().toString();
+        txtODate.setText(date);
     }
 
     private void loadAllCustomers() {
-      try {
+        try {
             ArrayList<CustomerDTO> allCustomers = new OrderFormController().getAllCustomers();
             cmbCusID.removeAllItems();
             for (CustomerDTO customer : allCustomers) {
@@ -382,20 +476,17 @@ public class OrderForm extends javax.swing.JFrame {
         }
     }
 
-    private void loadAllItems(){
-             try {
-                 cmbSearchItem.removeAllItems();
-                 ArrayList<ItemDTO> allItems= new ItemFormController().getAllItem();
-                 for(ItemDTO item:allItems){
-                     cmbSearchItem.addItem(item.getItemCode());
-                 }
-             } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (SQLException ex) {
-                 Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
-             }
-        
+    private void loadAllItems() {
+        cmbItem.removeAllItems();
+        try {
+            ArrayList<ItemDTO> allItems = new ItemFormController().getAllItems();
+            for (ItemDTO item : allItems) {
+                cmbItem.addItem(item.getItemCode());
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-        
-    }
-
+}

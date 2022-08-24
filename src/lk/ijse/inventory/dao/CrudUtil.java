@@ -4,17 +4,12 @@
  * and open the template in the editor.
  */
 package lk.ijse.inventory.dao;
-
-import lk.ijse.inventory.db.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import lk.ijse.inventory.db.DBConnection;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
 public class CrudUtil {
 
     private static PreparedStatement getPreparedStatement(String sql, Object... params) throws ClassNotFoundException, SQLException {

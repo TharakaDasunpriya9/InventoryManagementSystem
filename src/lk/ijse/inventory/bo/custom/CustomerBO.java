@@ -10,10 +10,6 @@ import lk.ijse.inventory.dto.CustomerDTO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Tharaka Dasunpriya
- */
 public interface CustomerBO extends SuperBO{
     public boolean addCustomer(CustomerDTO customer) throws ClassNotFoundException, SQLException;
     public boolean updateCustomer(CustomerDTO customer) throws ClassNotFoundException, SQLException;
